@@ -52,8 +52,24 @@ xcodebuild -project IntervalAlarm.xcodeproj -scheme IntervalAlarm -sdk iphonesim
 xcrun simctl install booted build/Build/Products/Debug-iphonesimulator/IntervalAlarm.app && xcrun simctl launch booted io.interval.app
 ```
 
-To run it on a device, open the project, pick your team under **Signing &
-Capabilities**, and change the bundle identifier to something you own.
+### On your own iPhone
+
+1. In Xcode, **Settings → Accounts → +** and sign in with your Apple ID. A free
+   account is enough.
+2. Open the project, select the **IntervalAlarm** target → **Signing &
+   Capabilities**, tick **Automatically manage signing**, and pick your name under
+   **Team**.
+3. Change **Bundle Identifier** to something unique to you — `io.interval.app` is
+   taken by this repo.
+4. On the iPhone: **Settings → Privacy & Security → Developer Mode**, turn it on,
+   and restart when asked.
+5. Plug the phone in, trust the computer, pick it as the run destination, and press
+   Run.
+6. First launch only: **Settings → General → VPN & Device Management** on the phone,
+   and trust your developer certificate. Then allow notifications when the app asks.
+
+Built with a free Apple ID, the app stops working after **seven days** and needs
+rebuilding from Xcode. A paid Apple Developer account extends that to a year.
 
 ## How it works
 
@@ -111,5 +127,6 @@ palette, the one-sentence setup, why glass is used the way it is — is written 
 
 ## Licence
 
-No licence has been chosen yet, so default copyright applies: all rights reserved.
-Add a `LICENSE` file if you want others to be able to use it.
+[MIT](LICENSE) — use it, change it, ship it, sell it. The one condition is that the
+copyright notice travels with it, so credit stays attached wherever the code ends
+up.
